@@ -24,18 +24,38 @@
      installations. See the <uniqueKey> declaration below where <uniqueKey> is set to "id".
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-    <field name="lab_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="asset_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="code" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="code_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="code_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="is_active" type="boolean" indexed="true" stored="true" omitNorms="true"/>
-    <field name="is_active_text" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="type_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="system_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="system" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="system_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="system_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="function_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="function" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="function_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="function_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="vendor_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="commission_date" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
 
     <dynamicField name="property_*" type="string" indexed="true" stored="true"/>
     <dynamicField name="property_sort_*" type="string_ci" indexed="true" stored="true"/>

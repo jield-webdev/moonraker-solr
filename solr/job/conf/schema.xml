@@ -7,7 +7,7 @@
   ~ @copyright   Copyright (c) 2021 Jield BV (https://jield.nl)
   -->
 
-<schema name="moonraker_system" version="1.5">
+<schema name="moonraker_job" version="1.5">
 
     <!-- If you remove this field, you must _also_ disable the update log in solrconfig.xml
       or Solr won't start. _version_ and update log are required for SolrCloud
@@ -24,51 +24,40 @@
      installations. See the <uniqueKey> declaration below where <uniqueKey> is set to "id".
    -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-    <field name="system_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="job_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
-    <uniqueKey>id</uniqueKey>
+    <field name="lot_id" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="lot_id_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="lot_id_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="expected_duration" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="setup_time" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="temperature" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="number_of_children" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amount_of_queue" type="int" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="lab_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="lab" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="lab_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="lab_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="hold_until" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="due_by" type="string" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="vendor_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="commission_date" type="date" indexed="true" stored="true" omitNorms="true"/>
-    <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
-    <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="automation_level_id" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="automation_level" type="string" indexed="true" stored="true" omitNorms="true"/>
-
-    <field name="amount_of_assets" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="assets_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="assets_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-
-    <field name="amount_of_role_users" type="int" indexed="true" stored="true" omitNorms="true"/>
-    <field name="role_users_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
-    <field name="role_users_name" type="string" indexed="true" stored="true" omitNorms="true"
+    <field name="system_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="system" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="system_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
 
-    <dynamicField name="asset_property_*" type="string" indexed="true" stored="true"/>
-    <dynamicField name="asset_property_sort_*" type="string_ci" indexed="true" stored="true"/>
-    <dynamicField name="asset_property_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
-    <dynamicField name="asset_property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
-    <dynamicField name="asset_property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true"
-                  multiValued="true"/>
+    <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="last_update" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_submitted" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_locked" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_started" type="date" indexed="true" stored="true" omitNorms="true"/>
+    <field name="date_finished" type="date" indexed="true" stored="true" omitNorms="true"/>
 
+
+
+    <uniqueKey>id</uniqueKey>
 
     <field name="text" type="string_ci" indexed="true" stored="false"/>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
