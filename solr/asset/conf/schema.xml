@@ -30,13 +30,13 @@
     <field name="name_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="label" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="label_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amsimec_number" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amsimec_number_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="amsimec_number_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="type" type="string" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
-    <field name="type_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="system_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="system" type="string" indexed="true" stored="true" omitNorms="true"/>
@@ -48,10 +48,18 @@
     <field name="function_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="function_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="group_id" type="int" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="group" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="group_sort" type="string_ci" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+    <field name="group_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
+
     <field name="vendor_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
+    <field name="visibility_id" type="int" indexed="true" stored="true" omitNorms="true"/>
+    <field name="visibility" type="string" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="commission_date" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="date_created" type="date" indexed="true" stored="true" omitNorms="true"/>
