@@ -34,6 +34,11 @@
     <field name="description_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_code" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="expected_duration" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="setup_time" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="temperature" type="int" indexed="true" stored="true" omitNorms="true"/>
@@ -54,7 +59,6 @@
     <field name="date_locked" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="date_started" type="date" indexed="true" stored="true" omitNorms="true"/>
     <field name="date_finished" type="date" indexed="true" stored="true" omitNorms="true"/>
-
 
 
     <uniqueKey>id</uniqueKey>
