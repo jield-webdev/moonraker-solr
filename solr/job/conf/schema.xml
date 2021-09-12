@@ -35,6 +35,7 @@
     <field name="description_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user_id" type="int" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="string_ci" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general_edge_ngram" indexed="true" stored="true" omitNorms="true"/>
 
