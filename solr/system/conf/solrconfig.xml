@@ -72,18 +72,17 @@
          The examples below can be used to load some solr-contribs along
          with their external dependencies.
       -->
+    <lib dir="${solr.install.dir:../../../..}/contrib/extraction/lib" regex=".*\.jar" />
+    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-cell-\d.*\.jar" />
 
-    <lib dir="${solr.install.dir:../../../..}/contrib/extraction/lib" regex=".*\.jar"/>
-    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-cell-\d.*\.jar"/>
+    <lib dir="${solr.install.dir:../../../..}/contrib/clustering/lib/" regex=".*\.jar" />
+    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-clustering-\d.*\.jar" />
 
-    <lib dir="${solr.install.dir:../../../..}/contrib/clustering/lib/" regex=".*\.jar"/>
-    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-clustering-\d.*\.jar"/>
+    <lib dir="${solr.install.dir:../../../..}/contrib/langid/lib/" regex=".*\.jar" />
+    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-langid-\d.*\.jar" />
 
-    <lib dir="${solr.install.dir:../../../..}/contrib/langid/lib/" regex=".*\.jar"/>
-    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-langid-\d.*\.jar"/>
-
-    <lib dir="${solr.install.dir:../../../..}/contrib/velocity/lib" regex=".*\.jar"/>
-    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-velocity-\d.*\.jar"/>
+    <lib dir="${solr.install.dir:../../../..}/contrib/velocity/lib" regex=".*\.jar" />
+    <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-velocity-\d.*\.jar" />
 
     <!-- an exact 'path' can be used instead of a 'dir' to specify a
          specific jar file.  This will cause a serious error to be logged
@@ -327,7 +326,7 @@
 
          For more details see http://wiki.apache.org/solr/SolrJmx
       -->
-    <jmx/>
+    <jmx />
     <!-- If you want to connect to a particular server, specify the
          agentId
       -->
@@ -530,7 +529,7 @@
                size="10"
                initialSize="0"
                autowarmCount="10"
-               regenerator="solr.NoOpRegenerator"/>
+               regenerator="solr.NoOpRegenerator" />
 
         <!-- Field Value Cache
 
@@ -685,7 +684,7 @@
          handleSelect="true" is not recommended for new users, but is the default
          for backwards compatibility
       -->
-    <requestDispatcher handleSelect="false">
+    <requestDispatcher handleSelect="false" >
         <!-- Request Parsing
 
              These settings indicate how Solr Requests may be parsed, and
@@ -728,7 +727,7 @@
              The options below instruct Solr not to output any HTTP Caching
              related headers
           -->
-        <httpCaching never304="true"/>
+        <httpCaching never304="true" />
         <!-- If you include a <cacheControl> directive, it will be used to
              generate a Cache-Control header (as well as an Expires header
              if the value contains "max-age=")
@@ -973,7 +972,7 @@
       -->
     <requestHandler name="/update/extract"
                     startup="lazy"
-                    class="solr.extraction.ExtractingRequestHandler">
+                    class="solr.extraction.ExtractingRequestHandler" >
         <lst name="defaults">
             <str name="lowernames">true</str>
             <str name="uprefix">ignored_</str>
@@ -1006,7 +1005,7 @@
      -->
     <requestHandler name="/analysis/field"
                     startup="lazy"
-                    class="solr.FieldAnalysisRequestHandler"/>
+                    class="solr.FieldAnalysisRequestHandler" />
 
 
     <!-- Document Analysis Handler
@@ -1041,7 +1040,7 @@
     -->
     <requestHandler name="/analysis/document"
                     class="solr.DocumentAnalysisRequestHandler"
-                    startup="lazy"/>
+                    startup="lazy" />
 
     <!-- Admin Handlers
 
@@ -1104,7 +1103,7 @@
     </requestHandler>
 
     <!-- Echo the request contents back to the client -->
-    <requestHandler name="/debug/dump" class="solr.DumpRequestHandler">
+    <requestHandler name="/debug/dump" class="solr.DumpRequestHandler" >
         <lst name="defaults">
             <str name="echoParams">explicit</str>
             <str name="echoHandler">true</str>
@@ -1124,7 +1123,7 @@
 
          https://wiki.apache.org/solr/SolrCloud/
       -->
-    <requestHandler name="/replication" class="solr.ReplicationHandler">
+    <requestHandler name="/replication" class="solr.ReplicationHandler" >
         <!--
            To enable simple master/slave replication, uncomment one of the
            sections below, depending on whether this solr instance should be
@@ -1318,8 +1317,7 @@
         <lst name="suggester">
             <str name="name">mySuggester</str>
             <str name="lookupImpl">FuzzyLookupFactory</str>      <!-- org.apache.solr.spelling.suggest.fst -->
-            <str name="dictionaryImpl">DocumentDictionaryFactory
-            </str>     <!-- org.apache.solr.spelling.suggest.HighFrequencyDictionaryFactory -->
+            <str name="dictionaryImpl">DocumentDictionaryFactory</str>     <!-- org.apache.solr.spelling.suggest.HighFrequencyDictionaryFactory -->
             <str name="field">cat</str>
             <str name="weightField">price</str>
             <str name="suggestAnalyzerFieldType">string</str>
@@ -1370,7 +1368,7 @@
       -->
     <searchComponent name="clustering"
                      enable="${solr.clustering.enabled:false}"
-                     class="solr.clustering.ClusteringComponent">
+                     class="solr.clustering.ClusteringComponent" >
         <lst name="engine">
             <str name="name">lingo</str>
 
@@ -1486,7 +1484,7 @@
          results for a given query regardless of the normal lucene
          scoring.
       -->
-    <searchComponent name="elevator" class="solr.QueryElevationComponent">
+    <searchComponent name="elevator" class="solr.QueryElevationComponent" >
         <!-- pick a fieldType to analyze queries -->
         <str name="queryFieldType">string</str>
         <str name="config-file">elevate.xml</str>
@@ -1546,7 +1544,7 @@
 
             <!-- Configure the standard encoder -->
             <encoder name="html"
-                     class="solr.highlight.HtmlEncoder"/>
+                     class="solr.highlight.HtmlEncoder" />
 
             <!-- Configure the standard fragListBuilder -->
             <fragListBuilder name="simple"
