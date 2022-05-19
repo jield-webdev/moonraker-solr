@@ -76,7 +76,7 @@
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
     <fieldType name="float" class="solr.FloatPointField" omitNorms="true" useDocValuesAsStored="false"/>
     <fieldType name="long" class="solr.LongPointField" omitNorms="true" useDocValuesAsStored="false"/>
-    <fieldType name="int" class="solr.IntPointField" omitNorms="true" useDocValuesAsStored="false"/>
+    <fieldType name="int" class="solr.IntPointField" omitNorms="true" useDocValuesAsStored="true"/>
     <fieldType name="date" class="solr.DatePointField" omitNorms="true" useDocValuesAsStored="false"/>
 
     <fieldType name="text_en_splitting" class="solr.TextField" positionIncrementGap="100"
