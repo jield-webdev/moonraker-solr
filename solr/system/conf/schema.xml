@@ -26,6 +26,8 @@
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
     <field name="system_id" type="int" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="sort" type="int" indexed="true" stored="true" omitNorms="true"/>
+
     <uniqueKey>id</uniqueKey>
 
     <field name="name" type="string" indexed="true" stored="true" omitNorms="true"/>
