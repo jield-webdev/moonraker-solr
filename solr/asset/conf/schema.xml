@@ -71,6 +71,10 @@
     <dynamicField name="property_search_*" type="text_general_edge_ngram" indexed="true" stored="true"/>
     <dynamicField name="property_array_*" type="string" indexed="true" stored="true" multiValued="true"/>
     <dynamicField name="property_array_int_*" type="int" indexed="true" stored="true" multiValued="true"/>
+
+    <dynamicField name="property_min_*" type="int" indexed="true" stored="true"/>
+    <dynamicField name="property_max_*" type="int" indexed="true" stored="true"/>
+
     <dynamicField name="property_array_search_*" type="text_general_edge_ngram" indexed="true" stored="true"
                   multiValued="true"/>
 
