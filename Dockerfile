@@ -8,5 +8,3 @@ ADD --chown=solr:solr solr/asset /var/solr/data/asset
 ADD --chown=solr:solr solr/system /var/solr/data/system
 ADD --chown=solr:solr solr/lab /var/solr/data/lab
 ADD --chown=solr:solr solr/job /var/solr/data/job
-
-RUN mkdir /var/solr/cache && chown solr:solr /var/solr/cache
