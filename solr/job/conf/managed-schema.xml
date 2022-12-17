@@ -23,19 +23,36 @@
     <field name="lot_id_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="lot_id_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="lot_id" dest="lot_id_sort"/>
+    <copyField source="lot_id" dest="lot_id_search"/>
+
     <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
-    <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <copyField source="description" dest="description_sort"/>
+    <copyField source="description" dest="description_search"/>
+
     <field name="user_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="user" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="user_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+
+    <copyField source="user" dest="user_search"/>
 
     <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_code" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="status_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="status" dest="status_sort"/>
+    <copyField source="status" dest="status_search"/>
+
+    <field name="program_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="program" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="program_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
+    <field name="program_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
     <field name="expected_duration" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="setup_time" type="pint" indexed="true" stored="true" omitNorms="true"/>
@@ -50,6 +67,8 @@
     <field name="system" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="system_search" type="text_general" indexed="true" stored="true" omitNorms="true"
            multiValued="true"/>
+
+    <copyField source="system" dest="system_search"/>
 
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="last_update" type="pdate" indexed="true" stored="true" omitNorms="true"/>

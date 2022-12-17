@@ -25,19 +25,31 @@
     <field name="name_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="name_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="name" dest="name_search"/>
+    <copyField source="name" dest="name_sort"/>
+
     <field name="description" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="description_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="description" dest="description_search"/>
+    <copyField source="description" dest="description_sort"/>
 
     <field name="lab_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="lab" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="lab_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="lab_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
 
+    <copyField source="lab" dest="lab_search"/>
+    <copyField source="lab" dest="lab_sort"/>
+
     <field name="vendor_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor" type="string" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_sort" type="text_gen_sort" indexed="true" stored="true" omitNorms="true"/>
     <field name="vendor_search" type="text_general" indexed="true" stored="true" omitNorms="true"/>
+
+    <copyField source="vendor" dest="vendor_search"/>
+    <copyField source="vendor" dest="vendor_sort"/>
 
     <field name="commission_date" type="pdate" indexed="true" stored="true" omitNorms="true"/>
     <field name="date_created" type="pdate" indexed="true" stored="true" omitNorms="true"/>
@@ -67,6 +79,11 @@
 
     <dynamicField name="asset_property_array_search_*" type="text_general" indexed="true" stored="true"
                   multiValued="true"/>
+
+
+    <copyField source="asset_property_*" dest="asset_property_sort_*"/>
+    <copyField source="asset_property_*" dest="asset_property_search_*"/>
+    <copyField source="asset_property_array_*" dest="asset_property_array_search_*"/>
 
     <uniqueKey>id</uniqueKey>
 
