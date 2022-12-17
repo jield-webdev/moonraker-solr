@@ -58,6 +58,10 @@
     <field name="automation_level_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="automation_level" type="string" indexed="true" stored="true" omitNorms="true"/>
 
+    <field name="status_id" type="pint" indexed="true" stored="true" omitNorms="true"/>
+    <field name="status" type="string" indexed="true" stored="true" omitNorms="true"/>
+    <field name="is_active" type="string" indexed="true" stored="true" omitNorms="true"/>
+
     <field name="amount_of_assets" type="pint" indexed="true" stored="true" omitNorms="true"/>
     <field name="assets_name" type="string" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
     <field name="assets_id" type="pint" indexed="true" stored="true" omitNorms="true" multiValued="true"/>
